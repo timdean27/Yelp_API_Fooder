@@ -36,13 +36,13 @@ app.get("/apiBS", (req, res) => {
 });
 
 ////////////////////////////////API call For "/businesses/{id}"
-app.get("/apiDetail", (req, res) => {;
-    let pathFDetail = req.query.path;
-    console.log("req.query.path", pathFDetail);
+app.get("/api/Detail", (req, res) => {;
+    let pathDetail = req.query.pathDetail;
+    console.log("req.query.path pathDetail", pathDetail);
   
     const options = {
       method: "GET",
-      url: `${API_BASE_URL}${pathFDetail}`,
+      url: `${API_BASE_URL}${pathDetail}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
         Origin: "localhost",
@@ -60,7 +60,29 @@ app.get("/apiDetail", (req, res) => {;
       });
   });
 ////////////////////////////////API call For "/businesses/{id}/reviews"
-
+app.get("/api/Reviews", (req, res) => {;
+    let pathReviews = req.query.pathReviews;
+    console.log("req.query.path  pathReviews", pathReviews);
+  
+    const options = {
+      method: "GET",
+      url: `${API_BASE_URL}${pathReviews}`,
+      headers: {
+        Authorization: `Bearer ${YELP_API_KEY}`,
+        Origin: "localhost",
+        withCredentials: true,
+      },
+    };
+  
+    axios
+      .request(options)
+      .then((response) => {
+        res.json(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
 
 
