@@ -10,7 +10,7 @@ app.use(cors());
 const API_BASE_URL = process.env.API_BASE_URL;
 const YELP_API_KEY = process.env.YELP_API_KEY;
 
-app.get("/api", (req, res) => {
+app.get("/apiBS", (req, res) => {
   let recivedQuery = req.query.searchQuery;
   let path = req.query.path;
   console.log("req.query.searchQuery", recivedQuery);
@@ -36,7 +36,29 @@ app.get("/api", (req, res) => {
 });
 
 ////////////////////////////////API call For "/businesses/{id}"
-
+app.get("/apiDetail", (req, res) => {;
+    let pathFDetail = req.query.path;
+    console.log("req.query.path", pathFDetail);
+  
+    const options = {
+      method: "GET",
+      url: `${API_BASE_URL}${pathFDetail}`,
+      headers: {
+        Authorization: `Bearer ${YELP_API_KEY}`,
+        Origin: "localhost",
+        withCredentials: true,
+      },
+    };
+  
+    axios
+      .request(options)
+      .then((response) => {
+        res.json(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 ////////////////////////////////API call For "/businesses/{id}/reviews"
 
 
