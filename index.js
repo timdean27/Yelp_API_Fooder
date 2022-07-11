@@ -86,12 +86,9 @@ app.get("/api/Reviews", (req, res) => {;
 
 
 
-
-
-
 const port = process.env.PORT || 3500;
 
 // Run our server!
 app.listen(port, () => {
-  console.log(`Express MVC app is running on port ${port}`);
+  console.log(`Express app is running on port ${port}`);
 });
