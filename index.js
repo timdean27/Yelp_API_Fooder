@@ -4,7 +4,10 @@ const axios = require("axios");
 const queryString = require("query-string");
 require("dotenv").config();
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.json())
+app.get('/favicon.ico', (req, res) => {res.send(".......")})
 
 //////////////////////////////API call For "/businesses/search"
 const API_BASE_URL = process.env.API_BASE_URL;
