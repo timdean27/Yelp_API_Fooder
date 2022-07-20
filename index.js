@@ -78,7 +78,7 @@ app.get("/api/Reviews", (req, res) => {;
       url: `${API_BASE_URL}${pathReviews}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
-        Origin: "https://fooder-backend-yelp-api.herokuapp.com",
+        Origin: "fooder-backend-yelp-api.herokuapp.com",
         withCredentials: true,
       },
     };
