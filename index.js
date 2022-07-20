@@ -13,6 +13,11 @@ app.get('/favicon.ico', (req, res) => {res.send(".......")})
 const API_BASE_URL = process.env.API_BASE_URL;
 const YELP_API_KEY = process.env.YELP_API_KEY;
 
+app.get("/ok",(req,res) =>
+{res.send("ok")})
+
+
+
 app.get("/apiBS", (req, res) => {
   let recivedQuery = req.query.searchQuery;
   let path = req.query.path;
