@@ -89,9 +89,7 @@ app.get("/api/Reviews", (req, res) => {;
 
 
 
-  app.set('port', process.env.PORT || 3500);
-
-
-app.listen(process.env.PORT || 3500, function(){
-  console.log("Express server listening on port", this.address().port, app.settings.env);
-});
+  const server = app.listen(process.env.PORT || 3500, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+  });
