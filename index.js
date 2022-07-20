@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
-////////////////////////////////API call For "/businesses/search"
+//////////////////////////////API call For "/businesses/search"
 const API_BASE_URL = process.env.API_BASE_URL;
 const YELP_API_KEY = process.env.YELP_API_KEY;
 
