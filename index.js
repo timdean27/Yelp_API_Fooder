@@ -28,11 +28,11 @@ app.get("/apiBS", (req, res) => {
     url: `${API_BASE_URL}${path}?${recivedQuery}`,
     headers: {
       Authorization: `Bearer ${YELP_API_KEY}`,
-      Origin: "localhost",
+      Origin: "fooder-backend-yelp-api.herokuapp.com",
       withCredentials: true,
     },
   };
-
+  console.log("options", options, recivedQuery);
   axios
     .request(options)
     .then((response) => {
@@ -53,7 +53,7 @@ app.get("/api/Detail", (req, res) => {;
       url: `${API_BASE_URL}${pathDetail}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
-        Origin: "localhost",
+        Origin: "fooder-backend-yelp-api.herokuapp.com",
         withCredentials: true,
       },
     };
@@ -77,7 +77,7 @@ app.get("/api/Reviews", (req, res) => {;
       url: `${API_BASE_URL}${pathReviews}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
-        Origin: "localhost",
+        Origin: "https://fooder-backend-yelp-api.herokuapp.com",
         withCredentials: true,
       },
     };
