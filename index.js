@@ -29,7 +29,7 @@ app.get("/apiBS", (req, res) => {
     url: `${API_BASE_URL}${path}?${recivedQuery}`,
     headers: {
       Authorization: `Bearer ${YELP_API_KEY}`,
-      Origin: "fooder-backend-yelp-api.herokuapp.com",
+      Origin: "yelpapifooder-production.up.railway.app",
       withCredentials: true,
     },
   };
@@ -54,7 +54,7 @@ app.get("/api/Detail", (req, res) => {;
       url: `${API_BASE_URL}${pathDetail}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
-        Origin: "fooder-backend-yelp-api.herokuapp.com",
+        Origin: "yelpapifooder-production.up.railway.app",
         withCredentials: true,
       },
     };
@@ -78,7 +78,7 @@ app.get("/api/Reviews", (req, res) => {;
       url: `${API_BASE_URL}${pathReviews}`,
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
-        Origin: "fooder-backend-yelp-api.herokuapp.com",
+        Origin: "yelpapifooder-production.up.railway.app",
         withCredentials: true,
       },
     };
